@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Archives</title>
+</head>
+<body>
+	<div align="center">
+	<table border="1">
+	<thead>
+	<tr>
+	<td>idArchive</td>
+	<td>idSociete</td>
+	<td>idType</td>
+	<td>nomArchive</td>
+	<td>dateCreation</td>
+	<td>Actions</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="arch : ${listArchives}">
+		<td th:text="${arch.idArchive}">idArchive</td>
+		<td th:text="${arch.Societe.idSociete}">idSociete</td>
+		<td th:text="${arch.TypeFichier.idType}">idType</td>
+		<td th:text="${arch.nomArchive}">nomArchive</td>
+		<td th:text="${arch.dateCreaction}">dateCreation</td>
+		<td> <a th:href="@{'/deleteArch/' + ${arch.idArchive}}">delete</a></td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
+</body>
+</html>
